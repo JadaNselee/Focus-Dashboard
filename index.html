@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Focus Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1 id="greeting">Hi 👋</h1>
+      <p class="sub">Your Focus Dashboard</p>
+
+      <div class="nameRow">
+        <input id="nameInput" type="text" placeholder="Enter your name…" />
+        <button id="saveNameBtn" class="ghost">Save</button>
+        <button id="clearNameBtn" class="ghost">Change</button>
+      </div>
+    </div>
+
+    <button id="resetAllBtn" class="ghost">Reset All</button>
+  </header>
+
+  <main class="grid">
+    <!-- Pomodoro -->
+    <section class="card">
+      <div class="cardHeader">
+        <h2>Pomodoro</h2>
+        <div class="modePills">
+          <button class="pill active" id="pomodoroModeBtn">25</button>
+          <button class="pill" id="breakModeBtn">5</button>
+        </div>
+      </div>
+
+      <div class="timerWrap">
+        <div id="timer" class="timer">25:00</div>
+        <p id="timerLabel" class="tiny">Study time.</p>
+      </div>
+
+      <div class="row">
+        <button id="startPauseBtn">Start</button>
+        <button id="resetTimerBtn" class="ghost">Reset</button>
+      </div>
+    </section>
+
+    <!-- Tasks -->
+    <section class="card">
+      <div class="cardHeader">
+        <h2>Today’s Tasks</h2>
+        <button id="clearTasksBtn" class="ghost">Clear</button>
+      </div>
+
+      <div class="row">
+        <input id="taskInput" type="text" placeholder="Add a task (ex: JS chapter 1)" />
+        <button id="addTaskBtn">Add</button>
+      </div>
+
+      <ul id="taskList" class="list"></ul>
+    </section>
+
+    <!-- Quote -->
+    <section class="card quoteCard">
+      <div class="cardHeader">
+        <h2>Quote of the Day</h2>
+        <button id="newQuoteBtn" class="ghost">New</button>
+      </div>
+
+      <p id="quoteText" class="quote">Loading a quote…</p>
+      <p id="quoteAuthor" class="author">—</p>
+    </section>
+
+    <!-- Stats -->
+    <section class="card">
+      <div class="cardHeader">
+        <h2>Today</h2>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="statNum" id="completedCount">0</div>
+          <div class="tiny">Tasks completed</div>
+        </div>
+        <div class="stat">
+          <div class="statNum" id="focusSessions">0</div>
+          <div class="tiny">Focus sessions</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Assistant Bubble -->
+  <div class="assistant" id="assistant">
+    <div class="assistantHeader">
+      <div class="assistantTitle">
+        <span class="dot" id="assistantDot"></span>
+        <span id="assistantName">Cosmo</span>
+        <span class="tiny" id="assistantMood">calm mode</span>
+      </div>
+
+      <div class="assistantControls">
+        <button class="pill small active" id="cosmoBtn">Cosmo</button>
+        <button class="pill small" id="astraBtn">Astra</button>
+        <button class="ghost smallBtn" id="assistantToggleBtn">—</button>
+      </div>
+    </div>
+
+    <div class="assistantBody" id="assistantBody">
+      <p class="assistantMsg" id="assistantMsg">Add 1–3 tasks, then hit Start. I’ll keep you on track.</p>
+
+      <div class="assistantActions">
+        <button id="assistantTipBtn" class="ghost">Tip</button>
+        <button id="assistantPlanBtn">Plan my next 25</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot tiny">
+    Built by you. Powered by consistency (and a little caffeine).
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
